@@ -1,22 +1,14 @@
-import React, { useState, Children } from "react";
+import React from 'react'
 
-const ChildComponent = ({ children }) => {
-  const [inputValue, setInputValue] = useState("");
-  const [outputValue, setOutputValue] = useState("");
-
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setInputValue(value);
-    setOutputValue(value * value);
-  };
-
+const ChildComponent = (props) => {
+//code here
   return (
     <div id="child">
-      {Children.only(children)}
-      <input type="number" id="input" value={inputValue} onChange={handleInputChange} />
-      <p id="output">{outputValue}</p>
+      Find The Square <br/>
+    {props.children}
     </div>
-  );
-};
+  )
+}
+
 
 export default ChildComponent;
